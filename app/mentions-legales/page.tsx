@@ -32,8 +32,8 @@ export default function MentionsLegalesPage() {
                 Auto-entrepreneur
               </p>
               <p>
-                <strong className="text-[#E8EFF6]">SIRET :</strong> [À
-                renseigner]
+                <strong className="text-[#E8EFF6]">SIRET :</strong> 102 368 396
+                00010
               </p>
               <p>
                 <strong className="text-[#E8EFF6]">Adresse :</strong> Nice,

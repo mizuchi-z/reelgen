@@ -335,56 +335,21 @@ export default async function HomePage() {
         {/* ── ILS ONT FAIT CONFIANCE ── */}
         <section className="py-24 px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="font-mono text-xs text-[#00B4D8] tracking-[4px] border border-[rgba(0,180,216,0.3)] bg-[rgba(0,180,216,0.08)] px-4 py-2 rounded-[4px] uppercase inline-block mb-6">
-                RÉSULTATS RÉELS
-              </span>
-              <h2 className="font-orbitron font-black text-3xl md:text-4xl text-[#E8EFF6]">
-                ILS ONT FAIT{" "}
-                <span className="text-[#00B4D8]">CONFIANCE</span>
-              </h2>
-            </div>
+            <h2 className="font-orbitron font-black text-3xl md:text-4xl text-[#E8EFF6] text-center mb-12">
+              ILS ONT FAIT <span className="text-[#00B4D8]">CONFIANCE</span>
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Carte 1 — Din'Apéro */}
-              <div className="bg-[#0D1826] border border-[rgba(0,180,216,0.12)] rounded-[8px] p-6 flex flex-col gap-4 hover:border-[rgba(0,180,216,0.4)] transition-all duration-150">
-                <div className="flex items-start justify-between gap-2">
-                  <div>
-                    <p className="font-orbitron font-bold text-sm text-[#E8EFF6]">Din&apos;Apéro</p>
-                    <p className="font-mono text-xs text-[#5A7089] mt-1">Food & Brunch · Nice</p>
-                  </div>
-                  <span className="font-mono text-[10px] text-[#00B4D8] border border-[rgba(0,180,216,0.3)] bg-[rgba(0,180,216,0.08)] px-2 py-1 rounded-[4px] shrink-0">REEL IA</span>
-                </div>
-                <a href="https://www.instagram.com/reel/DVeOgEmDPgP/" target="_blank" rel="noopener noreferrer" className="btn-primary px-4 py-2.5 text-xs rounded text-center mt-auto">
-                  Voir le Reel →
-                </a>
+              <div className="bg-[#0D1826] border border-[rgba(0,180,216,0.12)] rounded-[8px] p-6 flex flex-col gap-4">
+                <h3 className="font-orbitron font-bold text-sm text-[#E8EFF6]">Din&apos;Apéro</h3>
+                <a href="https://www.instagram.com/reel/DVeOgEmDPgP/" target="_blank" rel="noopener noreferrer" className="btn-primary px-4 py-2.5 text-xs rounded text-center mt-auto">Voir le Reel</a>
               </div>
-
-              {/* Carte 2 — Véronique Jeannot */}
-              <div className="bg-[#0D1826] border border-[rgba(0,180,216,0.12)] rounded-[8px] p-6 flex flex-col gap-4 hover:border-[rgba(0,180,216,0.4)] transition-all duration-150">
-                <div className="flex items-start justify-between gap-2">
-                  <div>
-                    <p className="font-orbitron font-bold text-sm text-[#E8EFF6]">Véronique Jeannot</p>
-                    <p className="font-mono text-xs text-[#5A7089] mt-1">Culture & Littérature · Nice</p>
-                  </div>
-                  <span className="font-mono text-[10px] text-[#00B4D8] border border-[rgba(0,180,216,0.3)] bg-[rgba(0,180,216,0.08)] px-2 py-1 rounded-[4px] shrink-0">REEL IA</span>
-                </div>
-                <a href="https://www.instagram.com/reel/DV_nC08iB8d/" target="_blank" rel="noopener noreferrer" className="btn-primary px-4 py-2.5 text-xs rounded text-center mt-auto">
-                  Voir le Reel →
-                </a>
+              <div className="bg-[#0D1826] border border-[rgba(0,180,216,0.12)] rounded-[8px] p-6 flex flex-col gap-4">
+                <h3 className="font-orbitron font-bold text-sm text-[#E8EFF6]">Véronique Jeannot</h3>
+                <a href="https://www.instagram.com/reel/DV_nC08iB8d/" target="_blank" rel="noopener noreferrer" className="btn-primary px-4 py-2.5 text-xs rounded text-center mt-auto">Voir le Reel</a>
               </div>
-
-              {/* Carte 3 — Les Légendes de Nice */}
-              <div className="bg-[#0D1826] border border-[rgba(0,180,216,0.12)] rounded-[8px] p-6 flex flex-col gap-4 hover:border-[rgba(0,180,216,0.4)] transition-all duration-150">
-                <div className="flex items-start justify-between gap-2">
-                  <div>
-                    <p className="font-orbitron font-bold text-sm text-[#E8EFF6]">Les Légendes de Nice</p>
-                    <p className="font-mono text-xs text-[#5A7089] mt-1">Automobile · Nice</p>
-                  </div>
-                  <span className="font-mono text-[10px] text-[#00B4D8] border border-[rgba(0,180,216,0.3)] bg-[rgba(0,180,216,0.08)] px-2 py-1 rounded-[4px] shrink-0">REEL IA</span>
-                </div>
-                <a href="https://www.instagram.com/reel/DWZcEldDL7a/" target="_blank" rel="noopener noreferrer" className="btn-primary px-4 py-2.5 text-xs rounded text-center mt-auto">
-                  Voir le Reel →
-                </a>
+              <div className="bg-[#0D1826] border border-[rgba(0,180,216,0.12)] rounded-[8px] p-6 flex flex-col gap-4">
+                <h3 className="font-orbitron font-bold text-sm text-[#E8EFF6]">Les Légendes de Nice</h3>
+                <a href="https://www.instagram.com/reel/DWZcEldDL7a/" target="_blank" rel="noopener noreferrer" className="btn-primary px-4 py-2.5 text-xs rounded text-center mt-auto">Voir le Reel</a>
               </div>
             </div>
           </div>

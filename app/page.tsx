@@ -369,8 +369,11 @@ export default async function HomePage() {
               PRÊT À LANCER TON{" "}
               <span className="text-[#00B4D8]">PREMIER REEL IA ?</span>
             </h2>
-            <p className="font-sans text-sm text-[#5A7089] mb-8">
+            <p className="font-sans text-sm text-[#5A7089] mb-2">
               Rejoins les business qui utilisent déjà ReelGen pour leurs Reels.
+            </p>
+            <p className="font-mono text-xs text-[#00B4D8] mb-8">
+              ✦ Lancé à Nice · Mars 2026
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
@@ -385,6 +388,59 @@ export default async function HomePage() {
               >
                 Déjà un compte ? → Connexion
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ── FAQ ── */}
+        <section className="py-24 px-4 bg-[#0D1826]">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="font-orbitron font-black text-2xl text-[#E8EFF6] mb-10 text-center">
+              QUESTIONS <span className="text-[#00B4D8]">FRÉQUENTES</span>
+            </h2>
+            <div className="flex flex-col gap-4">
+              {[
+                {
+                  q: "Le contenu est en français ?",
+                  a: "Oui, tout est généré en français. Script, légende, hashtags.",
+                },
+                {
+                  q: "J'ai besoin d'un compte Higgsfield ou Kling AI ?",
+                  a: "Oui, ReelGen génère les prompts optimisés, tu les colles dans la plateforme de ton choix.",
+                },
+                {
+                  q: "C'est quoi Higgsfield ?",
+                  a: "Une plateforme qui regroupe plusieurs modèles IA vidéo comme Kling, Veo et d'autres. Idéale pour varier les styles.",
+                },
+                {
+                  q: "C'est quoi Kling AI ?",
+                  a: "Une plateforme dédiée aux modèles Kling (Kling 3.0, Kling Omni). Excellente pour les vidéos cinématiques.",
+                },
+                {
+                  q: "Le PDF est envoyé où ?",
+                  a: "Sur l'email avec lequel tu t'es inscrit, dans les secondes qui suivent.",
+                },
+                {
+                  q: "Je peux annuler l'abonnement ?",
+                  a: "Oui, à tout moment depuis ton dashboard, sans engagement.",
+                },
+                {
+                  q: "Le pack gratuit est vraiment gratuit ?",
+                  a: "Oui. 1 génération complète offerte à l'inscription. Aucune carte requise.",
+                },
+              ].map((faq) => (
+                <div
+                  key={faq.q}
+                  className="bg-[#080F1A] border border-[rgba(0,180,216,0.12)] rounded-[8px] p-6"
+                >
+                  <p className="font-orbitron font-bold text-sm text-[#E8EFF6] mb-2">
+                    {faq.q}
+                  </p>
+                  <p className="font-sans text-sm text-[#5A7089] leading-relaxed">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

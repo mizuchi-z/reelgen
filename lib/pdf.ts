@@ -3,13 +3,9 @@
 import { Generation } from "./types";
 
 function stripEmojis(str: string): string {
-  return str
-    .replace(/\p{Emoji_Presentation}/gu, "")
-    .replace(/\p{Emoji}\uFE0F/gu, "")
-    .replace(/[\u{1F000}-\u{1FAFF}]/gu, "")
-    .replace(/[\u{2600}-\u{27BF}]/gu, "")
-    .replace(/\s+/g, " ")
-    .trim();
+  // jsPDF Helvetica only supports Latin-1 (U+0000–U+00FF).
+  // Remove every character outside that range (covers all emojis & symbols).
+  return str.replace(/[^\x00-\xFF]/g, "").replace(/\s+/g, " ").trim();
 }
 
 export async function generatePDF(generation: Generation): Promise<Blob> {

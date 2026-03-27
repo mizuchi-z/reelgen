@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { Navbar } from "@/components/Navbar";
+import { PreviewTabs } from "@/components/PreviewTabs";
 
 export default async function HomePage() {
   let user = null;
@@ -140,6 +141,21 @@ export default async function HomePage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── APERÇU PACK ── */}
+        <section className="py-24 px-4 bg-[#0D1826]">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="font-orbitron font-black text-3xl md:text-4xl text-[#E8EFF6] mb-4">
+                VOICI CE QUE <span className="text-[#00B4D8]">TU REÇOIS</span>
+              </h2>
+              <p className="font-mono text-xs text-[#5A7089] tracking-widest">
+                Exemple réel généré avec ReelGen — Les Légendes de Nice · Automobile
+              </p>
+            </div>
+            <PreviewTabs />
           </div>
         </section>
 

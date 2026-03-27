@@ -2,6 +2,16 @@
 
 import { Generation } from "./types";
 
+function stripEmojis(str: string): string {
+  return str
+    .replace(/\p{Emoji_Presentation}/gu, "")
+    .replace(/\p{Emoji}\uFE0F/gu, "")
+    .replace(/[\u{1F000}-\u{1FAFF}]/gu, "")
+    .replace(/[\u{2600}-\u{27BF}]/gu, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export async function generatePDF(generation: Generation): Promise<Blob> {
   // Dynamic import to avoid SSR issues
   const { default: jsPDF } = await import("jspdf");
@@ -39,10 +49,10 @@ export async function generatePDF(generation: Generation): Promise<Blob> {
   doc.setTextColor(...mutedColor);
   doc.text("REELGEN BY MIZUCHI", pageWidth / 2, 30, { align: "center" });
 
-  // Dragon separator
-  doc.setTextColor(...cyan);
-  doc.setFontSize(20);
-  doc.text("🐉", pageWidth / 2, 50, { align: "center" });
+  // Separator
+  doc.setDrawColor(...cyan);
+  doc.setLineWidth(0.5);
+  doc.line(pageWidth / 2 - 20, 50, pageWidth / 2 + 20, 50);
 
   // Business name
   doc.setFontSize(28);
@@ -54,7 +64,7 @@ export async function generatePDF(generation: Generation): Promise<Blob> {
   // Title reel
   doc.setFontSize(14);
   doc.setTextColor(...cyan);
-  const titleLines = doc.splitTextToSize(resultat.titre_reel, pageWidth - margin * 2);
+  const titleLines = doc.splitTextToSize(stripEmojis(resultat.titre_reel), pageWidth - margin * 2);
   doc.text(titleLines, pageWidth / 2, 95, { align: "center" });
 
   // Separator
@@ -94,7 +104,7 @@ export async function generatePDF(generation: Generation): Promise<Blob> {
 
   doc.setFontSize(11);
   doc.setTextColor(...textColor);
-  const conceptLines = doc.splitTextToSize(resultat.concept, pageWidth - margin * 2);
+  const conceptLines = doc.splitTextToSize(stripEmojis(resultat.concept), pageWidth - margin * 2);
   doc.text(conceptLines, margin, 212);
 
   // Footer page 1
@@ -123,10 +133,10 @@ export async function generatePDF(generation: Generation): Promise<Blob> {
     head: [["Clip", "Durée", "Action", "Émotion", "Transition"]],
     body: resultat.script.map((clip) => [
       `#${clip.clip}`,
-      clip.duree,
-      clip.action,
-      clip.emotion,
-      clip.transition,
+      stripEmojis(clip.duree),
+      stripEmojis(clip.action),
+      stripEmojis(clip.emotion),
+      stripEmojis(clip.transition),
     ]),
     styles: {
       fillColor: surface,
@@ -199,7 +209,7 @@ export async function generatePDF(generation: Generation): Promise<Blob> {
     promptY += 11;
 
     // Prompt text
-    const promptLines = doc.splitTextToSize(p.prompt_en, pageWidth - margin * 2 - 8);
+    const promptLines = doc.splitTextToSize(stripEmojis(p.prompt_en), pageWidth - margin * 2 - 8);
     const promptHeight = promptLines.length * 4.5 + 8;
 
     doc.setFillColor(17, 31, 48);
@@ -234,7 +244,7 @@ export async function generatePDF(generation: Generation): Promise<Blob> {
   doc.setFillColor(...surface);
   doc.setDrawColor(...cyan);
   doc.setLineWidth(0.3);
-  const legendLines = doc.splitTextToSize(resultat.legende, pageWidth - margin * 2 - 8);
+  const legendLines = doc.splitTextToSize(stripEmojis(resultat.legende), pageWidth - margin * 2 - 8);
   const legendHeight = Math.min(legendLines.length * 5 + 12, 100);
   doc.roundedRect(margin, 32, pageWidth - margin * 2, legendHeight, 3, 3, "FD");
 
@@ -253,7 +263,7 @@ export async function generatePDF(generation: Generation): Promise<Blob> {
   doc.setFont("courier", "normal");
   doc.setFontSize(8);
   doc.setTextColor(0, 180, 216);
-  const hashText = resultat.hashtags.map((h) => `#${h}`).join("  ");
+  const hashText = resultat.hashtags.map((h) => `#${stripEmojis(h)}`).join("  ");
   const hashLines = doc.splitTextToSize(hashText, pageWidth - margin * 2);
   doc.text(hashLines, margin, hashY + 10);
 

@@ -52,9 +52,9 @@ export default async function HomePage() {
 
             {/* Subtitle */}
             <p className="font-sans text-base md:text-lg text-[#5A7089] max-w-2xl mx-auto mb-10 leading-relaxed">
-              Entre ton brief. ReelGen crée le script, les prompts Higgsfield &
-              Kling, la légende et les hashtags. Télécharge ton pack PDF. Lance
-              ton Reel.
+              Entre ton brief. ReelGen génère le script clip par clip, les
+              prompts prêts à coller dans Higgsfield ou Kling, la légende et
+              les hashtags. Tu reçois tout en PDF. Tu n&apos;as plus qu&apos;à créer.
             </p>
 
             {/* CTA */}
@@ -119,7 +119,7 @@ export default async function HomePage() {
                 {
                   num: "03",
                   title: "PACK PDF",
-                  desc: "Tu reçois ton pack par email. Tu tournes. Tu postes.",
+                  desc: "Tu reçois ton pack complet par email. Tu colles les prompts dans Higgsfield ou Kling. Tu tournes. Tu postes.",
                   icon: "📄",
                 },
               ].map((step) => (
@@ -205,6 +205,9 @@ export default async function HomePage() {
                 </div>
               ))}
             </div>
+            <p className="font-sans text-sm text-[#5A7089] text-center mt-10 max-w-2xl mx-auto">
+              ReelGen ne génère pas la vidéo — il génère tout ce qu&apos;il te faut pour la créer en 10 minutes avec les outils IA.
+            </p>
           </div>
         </section>
 
